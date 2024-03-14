@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>workers portal</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+
+        <!-- ... (your existing navbar content) ... -->
+        <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+            <h1 class="m-0 text-primary">WORKERS PORTAL</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="/index/" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <div class="nav-item dropdown">
+                    
+                    <!-- <div class="dropdown-menu rounded-0 m-0">
+                        <a href="job-list.html" class="dropdown-item">Job List</a>
+                        <a href="job-detail.html" class="dropdown-item">Job Detail</a>
+                    </div> -->
+                </div>
+                <div class="nav-item dropdown">
+                    <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="category.html" class="dropdown-item">Job Category</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404</a>
+                    </div> -->
+                </div>
+                <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
+            </div>
+            <!-- <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+        <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">find a worker<i class="fa fa-arrow-right ms-3"></i></a> -->
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0">
+        <div class="owl-carousel-item position-relative">
+            <!-- ... (your existing carousel content) ... -->
+            <img class="img-fluid" src="{% static 'img\alex-kotliarskyi-QBpZGqEMsKg-unsplash1.jpg' %}" alt="">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(13, 13, 14, 0.5);">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <!-- <div class="col-10 col-lg-8">
+                                    <h1 class="display-3 text-white animated slideInDown mb-4">Find The Perfect Worker That You Deserved</h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-2"> A unique and exclusive feature to make your search process more meaningful ! </p>
+                                    <a href="/register/" class="btn btn-primary py-md-3 px-md-5 me-3">SIGN UP</a>
+                                    <a href="/login/" class="btn btn-secondary py-md-3 px-md-5 ">LOG IN</a> -->
+                                  
+                                    </div>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+    <!-- Carousel End -->
+
+    <!-- Form Start -->
+    <div class="container my-5">
+        <form action="/jobposting/" method="post">
+            <!-- ... (your existing form content) ... -->
+            {% csrf_token %}
+    <center>
+        <table>
+            <h2><div style="color:rgb(243, 239, 239)"<b>Enter your details</b></h2>
+            <br><br>
+            <!-- <b><h1>Create your account</h1></b> -->
+           <tr>
+            <th>Your Name</th>
+            <td><input type="text" name="runame" value="{{sf}}"readonly></td>
+           </tr>
+            <tr> 
+               <th>jobname:</th>
+               <td><input type="text" name="rjname" placeholder="Enter Your job" required></td>
+            </tr>
+            <tr>
+                <th>category:</th>
+                <td>
+                    <select name="category">
+                        <option selected>Category</option>
+                        <option value="electician">Electician</option>
+                        <option value="laundry">Laundry</option>
+                        <option value="mechanic">Mechanic</option>
+                        <option value="carpenters">Carpenters</option>
+                        <option value="plumbing">Plumbing</option> 
+                        <option value="painter">Painter</option> 
+                        <option value="cleaning">cleaning</option> 
+                        <option value="interior designer">interior designer</option> 
+                        <option value="others">others</option> 
+
+
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td><input type="text" name="remail" value="{{ef}}"readonly></td>
+               </tr>
+           <tr>
+            <th>location:</th>
+            <td><input type="text" name="rlocation" placeholder="Enter Your location" required></td>
+           </tr>
+           <tr>
+            <th>daily wages</th>
+            <td><input type="text" name="rwages" placeholder="enter your wages" required></td>
+           </tr>
+           <tr>
+            <th>description:</th>
+            <td><input type="text" name="rdescription" placeholder="Enter Your description" required></td>
+         </tr>
+        
+         
+            <!-- <tr>
+           <th>Address:</th>
+               <td><input type="text" name="raddress" placeholder="Enter Your Address" ></td>
+            </tr>
+           <tr>
+            <th>Email:</th>
+            <td><input type="text" name="Email" placeholder="Enter Your Email"></td>
+           </tr> -->
+             <tr>
+               
+               <!-- <td><input type="text" name="rnum" placeholder="Enter Ration Card Number" ></td>
+            </tr> -->
+            
+            <!-- <tr> -->
+                <!-- <th>Password:</th>
+               <td><input type="text" name="rpass" placeholder="Enter Your Password"></td>
+            </tr>
+            <tr></tr> -->
+            <tr>
+                <!-- <center><td><p class="cb8ff6f51 c54cef1a1 c0e5a9db2">Already have an account? -->
+                    <!-- <a class="c9eecbbd0 ce05eb6f2" href="/login/" aria-label="">submit</a> -->
+                  </p></td></center></tr>
+                </table> 
+            <tr>
+               <th><input type="submit" value="SUBMIT"></th>
+            </tr>     
+    </center>
+
+        </form>
+    </div>
+    <!-- Form End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <!-- ... (your existing footer content) ... -->
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Company</h5>
+                    <a class="btn btn-link text-white-50" href="">About Us</a>
+                    <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                    <a class="btn btn-link text-white-50" href="">Our Services</a>
+                    <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                    <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                </div>
+                <!-- <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link text-white-50" href="">About Us</a>
+                    <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                    <a class="btn btn-link text-white-50" href="">Our Services</a>
+                    <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                    <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                </div> -->
+                <div class="col-lg-2 col-md-5">
+                    <h5 class="text-white mb-4">Contact</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>PALAKKAD,INDIA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+919809804120</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>workersportal32@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-6 col-md-7">
+                    <center><h5 class="text-white mb-6">FEEDBACK</h5></center>
+                    <p></p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control bg-transparent w-100 py-5 ps-7 pe-8" type="text" placeholder="Enter Your Feedback">
+                     <center> <button type="button" class="btn btn-primary py-2 position-absolute top-5 end-0 mt-2 me-6">SUBMIT</button></center>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <!-- &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.  -->
+                        
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        <!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> -->
+                    </div>
+                    <!-- <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
